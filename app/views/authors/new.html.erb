@@ -2,7 +2,7 @@
 <%= form_tag authors_path, method: "post" do %>
   <% if @author.errors.any? %>
     <p>There are errors, please take a look:</p>
-    <ul>
+    <ul id="error_explanation">
       <% @author.errors.full_messages.each do |error_message| %>
         <li><%= error_message %></li>
       <% end %>
