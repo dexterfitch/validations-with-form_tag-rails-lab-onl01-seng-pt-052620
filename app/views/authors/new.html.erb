@@ -3,7 +3,7 @@
   <% if @author.errors.any? %>
     <p>There are errors, please take a look:</p>
     <ul>
-      <% @authors.errors.full_messages.each do |error_message| %>
+      <% @author.errors.full_messages.each do |error_message| %>
         <li class="error_message"><%= error_message %></li>
       <% end %>
     </ul>
