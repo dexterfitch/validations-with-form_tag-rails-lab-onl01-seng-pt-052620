@@ -9,7 +9,7 @@
     </ul>
   <% end %>
 
-  <% if @author.name.valid? %>
+  <% if @author.errors[:name].empty? %>
     <div class="field">
   <% else %>
     <div class="field_with_errors">
@@ -18,7 +18,7 @@
     <%= text_field_tag "name", @author.name %>
   </div>
 
-  <% if @author.email.valid? %>
+  <% if @author.errors[:email].empty? %>
     <div class="field">
   <% else %>
     <div class="field_with_errors">
