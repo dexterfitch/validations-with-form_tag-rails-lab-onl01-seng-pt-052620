@@ -1,5 +1,12 @@
 <h2>Editing "<%= @post.title %>"</h2>
 <%= form_tag post_path(@post), method: "patch" do %>
+  <% if @post.errors.any? %>
+    <p>There are errors, please have a look</p>
+    <ul id="error_explanation">
+      <% @post.errors.full_messages.each do |error_message| %>
+        <li><%= error_message %></li>
+      <% end %>
+    </ul>
   <div class="field">
     <%= label_tag "title", "Title" %>
     <%= text_field_tag "title", @post.title %>
