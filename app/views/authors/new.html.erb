@@ -1,5 +1,9 @@
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
+<% if @author.errors.any? %>
+  <% @authors.errors.full_messages.each do |error_message| %>
+    <p class="error_message"><%= error_message %></p>
+  <% end %>
   <div class="field">
     <%= label_tag "name", "Name" %>
     <%= text_field_tag "name" %>
